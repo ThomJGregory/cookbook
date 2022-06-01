@@ -1,8 +1,13 @@
 // Bringing in our outside packages
 const express = require('express');
 const dotenv = require('dotenv').config();
+const colors = require('colors');
 // Bring in custom JSON error handler
 const { errorHandler } = require('./middleware/errorMiddleware');
+
+// Connect to the database we set up in /config/db with the Mongo URI we have stored in .env
+const connectDB = require('./config/db');
+connectDB();
 
 const port = process.env.PORT || 5000; // Port for the Server to run on (or 5000)
 
@@ -19,4 +24,6 @@ app.use('/api/recipes', require('./routes/recipeRoutes'));
 // The alternate error handler I created in the middleware folder
 app.use(errorHandler);
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(port, () =>
+	console.log(`Server started on port ${port}`.blue.underline)
+);
