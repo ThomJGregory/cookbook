@@ -1,0 +1,34 @@
+// @desc Get recipes
+// @route GET /api/recipes
+// access Private
+const getRecipes = (req, res) => {
+	res.status(200).json({ message: 'get recipes' });
+};
+
+// @desc add a recipe
+// @route POST /api/recipes
+// access Private
+const addRecipe = (req, res) => {
+	res.status(200).json({ message: 'add recipe' });
+};
+
+// @desc Edit/Update recipes
+// @route PUT /api/recipes/:id
+// access Private
+const updateRecipe = (req, res) => {
+	res.status(200).json({ message: `update recipe ${req.params.id}` });
+};
+
+// @desc Delete recipes
+// @route DELETE /api/recipes/:id
+// access Private
+const deleteRecipe = (req, res) => {
+	res.status(200).json({ message: `delete recipe ${req.params.id}` });
+};
+
+module.exports = {
+	getRecipes,
+	addRecipe,
+	updateRecipe,
+	deleteRecipe
+};
