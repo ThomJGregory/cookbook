@@ -2,7 +2,7 @@
 
 Cookbook is a place for me to keep, update, and read my recipes. Coded in MERN stack
 
-## installation
+## Installation
 
 1. Clone Repository
 
@@ -28,12 +28,8 @@ MONGO_URI = mongodb+srv://username:password@yourcluster.xxxx.mongodb.net/?retryW
 
 ## Usage
 
-Usage instructions here
+Once the database is connected: Add, View, Edit, and Delete your favorite recipes!
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-```
-
-```
