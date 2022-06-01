@@ -7,7 +7,7 @@ Cookbook is a place for me to keep, update, and read my recipes. Coded in MERN s
 1. Clone Repository
 
 ```bash
-git clone _____
+git clone https://github.com/ThomJGregory/cookbook
 ```
 
 2. Run npm install to install necessary node_modules
