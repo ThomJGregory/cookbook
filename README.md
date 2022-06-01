@@ -26,6 +26,18 @@ PORT = 5000
 MONGO_URI = mongodb+srv://username:password@yourcluster.xxxx.mongodb.net/?retryWrites=true&w=majority
 ```
 
+5. To start server:
+
+Node:
+```bash
+npm start
+```
+
+Nodemon:
+```bash
+npm run server
+```
+
 ## Usage
 
 Once the database is connected: Add, View, Edit, and Delete your favorite recipes!
