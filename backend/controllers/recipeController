@@ -9,6 +9,11 @@ const getRecipes = (req, res) => {
 // @route POST /api/recipes
 // access Private
 const addRecipe = (req, res) => {
+	if (!req.body.text) {
+		res.status(400);
+		// This is sent as HTML unless changed in /middleware/
+		throw new Error('Please add text');
+	}
 	res.status(200).json({ message: 'add recipe' });
 };
 

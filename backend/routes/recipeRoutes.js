@@ -1,5 +1,8 @@
+// bring in express, create a router
 const express = require('express');
 router = express.Router();
+
+// Bring in the controller functions from the controller
 const {
 	getRecipes,
 	addRecipe,
