@@ -1,35 +1,38 @@
+// Easier way to handle Promises, instead of try-catch just wrap each function with asyncHandler
+const asyncHandler = require('express-async-handler');
+
 // @desc Get recipes
 // @route GET /api/recipes
-// access Private
-const getRecipes = (req, res) => {
+// @access Private
+const getRecipes = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'get recipes' });
-};
+});
 
 // @desc add a recipe
 // @route POST /api/recipes
-// access Private
-const addRecipe = (req, res) => {
+// @access Private
+const addRecipe = asyncHandler(async (req, res) => {
 	if (!req.body.text) {
 		res.status(400);
 		// This is sent as HTML unless changed in /middleware/
 		throw new Error('Please add text');
 	}
 	res.status(200).json({ message: 'add recipe' });
-};
+});
 
 // @desc Edit/Update recipes
 // @route PUT /api/recipes/:id
-// access Private
-const updateRecipe = (req, res) => {
+// @access Private
+const updateRecipe = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: `update recipe ${req.params.id}` });
-};
+});
 
 // @desc Delete recipes
 // @route DELETE /api/recipes/:id
-// access Private
-const deleteRecipe = (req, res) => {
+// @access Private
+const deleteRecipe = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: `delete recipe ${req.params.id}` });
-};
+});
 
 module.exports = {
 	getRecipes,
