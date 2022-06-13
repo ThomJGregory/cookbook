@@ -21,6 +21,9 @@ app.use(express.urlencoded({ extended: false }));
 // The Recipe routes file will handle the web browser's navigation and make sure it points to the correct place
 app.use('/api/recipes', require('./routes/recipeRoutes'));
 
+// This points to the userRoutes.js file to handle any endpoints necessary for User authentication
+app.use('/api/users', require('./routes/userRoutes'));
+
 // The alternate error handler I created in the middleware folder
 app.use(errorHandler);
 

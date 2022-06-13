@@ -1,7 +1,14 @@
 const mongoose = require('mongoose');
 
+// Schema for the Recipes I will be adding. the 'user' field is typed Schema
+// To get the user info from the userSchema in /userModel.js
 const recipeSchema = mongoose.Schema(
 	{
+		user: {
+			type: mongoose.Schema.Types.ObjectId,
+			required: true,
+			ref: 'User'
+		},
 		title: {
 			type: String,
 			required: [true, 'Please add a title']
