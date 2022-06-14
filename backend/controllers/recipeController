@@ -2,6 +2,7 @@
 const asyncHandler = require('express-async-handler')
 
 const Recipe = require('../model/recipeModel')
+const User = require('../model/userModel')
 
 // @desc Get recipes
 // @route GET /api/recipes
@@ -45,6 +46,20 @@ const updateRecipe = asyncHandler(async (req, res) => {
 		throw new Error('Recipe not found...')
 	}
 
+	const user = await User.findById(req.user.id)
+
+	// Check for user
+	if (!user) {
+		res.status(401)
+		throw new Error('User not found')
+	}
+
+	// Make sure the logged in user matches the recipe's user
+	if (recipe.user.toString() !== user.id) {
+		res.status(401)
+		throw new Error('You cannot update this Recipe')
+	}
+
 	const updatedRecipe = await Recipe.findByIdAndUpdate(
 		req.params.id,
 		req.body,
@@ -63,6 +78,20 @@ const deleteRecipe = asyncHandler(async (req, res) => {
 	if (!recipe) {
 		res.status(400)
 		throw new Error('Recipe not found...')
+	}
+
+	const user = await User.findById(req.user.id)
+
+	// Check for user
+	if (!user) {
+		res.status(401)
+		throw new Error('User not found')
+	}
+
+	// Make sure the logged in user matches the recipe's user
+	if (recipe.user.toString() !== user.id) {
+		res.status(401)
+		throw new Error('You cannot delete this Recipe')
 	}
 
 	await Recipe.findByIdAndRemove(req.params.id)
