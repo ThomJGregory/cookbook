@@ -27,9 +27,9 @@ const addRecipe = asyncHandler(async (req, res) => {
 		time: req.body.time,
 		ingredients: req.body.ingredients,
 		steps: req.body.steps,
-		uploader: req.body.uploader,
 		imgpath: req.body.imgpath,
-		rating: req.body.rating
+		rating: req.body.rating,
+		user: req.user.id
 	})
 	res.status(200).json(recipe)
 })

@@ -29,10 +29,6 @@ const recipeSchema = mongoose.Schema(
 			type: Array,
 			required: false
 		},
-		uploader: {
-			type: String,
-			required: false
-		},
 		imgpath: {
 			type: String,
 			required: false
