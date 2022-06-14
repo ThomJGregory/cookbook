@@ -2,6 +2,8 @@
 
 Cookbook is a place for me to keep, update, and read my recipes. Coded in MERN stack
 
+This branch is testing a feature that lets each user only be able to update and remove their own recipes. Not necessary if the app has one user, but if I want to collaborate recipes later with somebody this would be helpful.
+
 ## Installation
 
 1. Clone Repository
