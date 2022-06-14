@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 // Schema for the Recipes I will be adding. the 'user' field is typed Schema
 // To get the user info from the userSchema in /userModel.js
@@ -45,6 +45,6 @@ const recipeSchema = mongoose.Schema(
 	{
 		timestamps: true
 	}
-);
+)
 
-module.exports = mongoose.model('Recipe', recipeSchema);
+module.exports = mongoose.model('Recipe', recipeSchema)
