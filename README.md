@@ -41,6 +41,18 @@ Nodemon:
 npm run server
 ```
 
+6. To start client:
+
+```bash
+npm run client
+```
+
+7. To run both simultaneously:
+
+```bash
+npm run dev
+```
+
 ## Usage
 
 Once the database is connected: Add, View, Edit, and Delete your favorite recipes!
